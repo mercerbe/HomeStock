@@ -1,6 +1,5 @@
 //dependencies
 import React, {Component} from 'react'
-import './App.css'
 import axios from 'axios'
 import { Route, Link } from 'react-router-dom'
 //components--add index for each component
