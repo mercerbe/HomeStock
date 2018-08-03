@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Link, withRouter } from 'react-router-dom'
+//semantic imports -- can't resolve at this location
+//pages
 import { Home } from './Home'
 import Login from './Login'
 import Dashboard from './Dashboard'
@@ -45,6 +47,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+
         <header className="App-header">
           <h1 className="App-title">HomeStock</h1>
         </header>
@@ -69,6 +72,7 @@ class App extends Component {
             <Route path='/login' render={() => <Login login={this.login}/>} />
             <Route path='/dashboard' render={() => <Dashboard history={this.props.history} loggedIn={this.state.loggedIn}/>}/>
         </div>
+
       </div>
     );
   }

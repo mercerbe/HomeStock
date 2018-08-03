@@ -1,4 +1,5 @@
 import React from 'react'
+//import { Container, Segment } from 'semantic-ui-react'
 import Service from './utils/Service'
 
 export default class Login extends React.Component {
@@ -48,6 +49,7 @@ export default class Login extends React.Component {
   render() {
     const passwordsDoNotMatch = this.state.passwordCheck !== '' && this.state.passwordCheck !== this.state.password
     return (
+
       <form action="">
 
         <h4>{this.state.createAccount ? 'Register for an account' : 'Login To Existing Account'}</h4>
@@ -80,6 +82,7 @@ export default class Login extends React.Component {
         }
 
       </form>
+
     )
   }
 }
