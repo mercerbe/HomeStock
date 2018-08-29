@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Route, Link, withRouter } from 'react-router-dom'
+import React, { Component } from 'react'
+import { Route, withRouter } from 'react-router-dom'
 //pages
-import { Home } from './Home'
+import { About } from './About'
 import Login from './Login'
 import Dashboard from './Dashboard'
 //components
@@ -53,29 +53,13 @@ class App extends Component {
       <CssBaseline />
       <div className="App">
         <Appbar/>
-
         <header className="App-header">
           <h1 className="App-title">HomeStock</h1>
         </header>
-        <div className="navbar">
-          <ul>
-            <li>
-              <Link to='/'>Home</Link>
-            </li>
-            <li>
-              <Link to="/login">Login/Register</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Dashboard</Link>
-            </li>
-            <li>
-              <span className="fake-link" onClick={this.logout}>Logout</span>
-            </li>
-          </ul>
-        </div>
+        {/* routes */}
         <div className="container">
-            <Route exact path='/' render={() => <Home loggedIn={this.state.loggedIn}/>} />
-            <Route path='/login' render={() => <Login login={this.login}/>} />
+            <Route exact path='/' render={() => <Login login={this.login}/>} />
+            <Route path='/about' render={() => <About loggedIn={this.state.loggedIn}/>} />
             <Route path='/dashboard' render={() => <Dashboard history={this.props.history} loggedIn={this.state.loggedIn}/>}/>
         </div>
         <Footer />
@@ -85,4 +69,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App);
+export default withRouter(App)

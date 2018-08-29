@@ -29,13 +29,16 @@ class LabelBottomNavigation extends React.Component {
     const { value } = this.state;
 
     return (
+      <div>
+      <br/>
       <BottomNavigation value={value} onChange={this.handleChange} className={classes.root}>
         <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />
         <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
         <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
         <BottomNavigationAction label="Folder" value="folder" icon={<Icon>folder</Icon>} />
       </BottomNavigation>
-    );
+      </div>
+    )
   }
 }
 

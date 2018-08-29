@@ -9,6 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import { Link } from 'react-router-dom'
 
 const styles = {
   root: {
@@ -36,7 +37,7 @@ class MenuAppBar extends React.Component {
     this.setState({ anchorEl: event.currentTarget });
   };
 
-  handleClose = () => {
+  handleClose = (res) => {
     this.setState({ anchorEl: null });
   };
 
@@ -70,9 +71,9 @@ class MenuAppBar extends React.Component {
             open={open}
             onClose={this.handleClose}
           >
-          <MenuItem onClick={this.handleClose}>Home</MenuItem>
-          <MenuItem onClick={this.handleClose}>Login/Register</MenuItem>
-          <MenuItem onClick={this.handleClose}>Dashboard</MenuItem>
+          <MenuItem onClick={this.handleClose}><Link to='/about'>About</Link></MenuItem>
+          <MenuItem onClick={this.handleClose}><Link to='/'>Login/Register</Link></MenuItem>
+          <MenuItem onClick={this.handleClose}><Link to='/dashboard'>Dashboard</Link></MenuItem>
           <MenuItem onClick={this.handleClose}>Logout</MenuItem>
           </Menu>
           </div>

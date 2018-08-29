@@ -2,10 +2,10 @@ import React from 'react'
 //material
 
 
-export const Home = (props) => (
+export const About = (props) => (
   <div>
-    <h4>HomePage</h4>
-    <p>Welcome to the user authentication homepage</p>
+    <h4>How to use HomeStock:</h4>
     <p>You are currently {props.loggedIn ? 'logged in' : 'not logged in'}</p>
+    <p>some info and pics here, instructions...</p>
   </div>
 )
