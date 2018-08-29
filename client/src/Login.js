@@ -1,6 +1,7 @@
 import React from 'react'
-//import { Container, Segment } from 'semantic-ui-react'
 import Service from './utils/Service'
+//material
+import Button from '@material-ui/core/Button'
 
 export default class Login extends React.Component {
   state = {
@@ -77,8 +78,8 @@ export default class Login extends React.Component {
         </div> }{passwordsDoNotMatch && <div>Your passwords don't match!</div>}
 
         {!this.state.createAccount ? (
-        <button onClick={this.handleLogin}>Login</button> ) : (
-        <button onClick={this.handleRegistration}>Register</button> )
+        <Button variant='contained' color='primary' onClick={this.handleLogin}>Login</Button> ) : (
+        <Button variant='contained' color='primary' onClick={this.handleRegistration}>Register</Button> )
         }
 
       </form>

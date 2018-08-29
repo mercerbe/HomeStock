@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { Route, Link, withRouter } from 'react-router-dom'
-//semantic imports -- can't resolve at this location
 //pages
 import { Home } from './Home'
 import Login from './Login'
 import Dashboard from './Dashboard'
-
+//components
+import Appbar from './components/appbar'
+import Footer from './components/footer'
 // utils
 import Storage from './utils/Storage'
 import Service from './utils/Service'
+//Material Baseline
+import CssBaseline from '@material-ui/core/CssBaseline'
 
 class App extends Component {
   state={
@@ -46,7 +49,10 @@ class App extends Component {
 
   render() {
     return (
+      <React.Fragment>
+      <CssBaseline />
       <div className="App">
+        <Appbar/>
 
         <header className="App-header">
           <h1 className="App-title">HomeStock</h1>
@@ -72,8 +78,9 @@ class App extends Component {
             <Route path='/login' render={() => <Login login={this.login}/>} />
             <Route path='/dashboard' render={() => <Dashboard history={this.props.history} loggedIn={this.state.loggedIn}/>}/>
         </div>
-
+        <Footer />
       </div>
+      </React.Fragment>
     );
   }
 }
