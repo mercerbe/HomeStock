@@ -12,11 +12,30 @@ import Storage from './utils/Storage'
 import Service from './utils/Service'
 //Material Baseline
 import CssBaseline from '@material-ui/core/CssBaseline'
+import PropTypes from 'prop-types'
+import Card from '@material-ui/core/Card'
+import CardMedia from '@material-ui/core/CardMedia'
+import CardActionArea from '@material-ui/core/CardActionArea'
+//images
+import Logo from './images/logo_transparent.png'
+
+//styles for App
+const styles = {
+  card: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 140,
+  },
+}
 
 class App extends Component {
+  // set initial state
   state={
     loggedIn: false,
   }
+  //set props
+  props = {}
 
   componentDidMount() {
     console.log('lifecycle Mount App.js')
@@ -48,14 +67,20 @@ class App extends Component {
   }
 
   render() {
+    const { classes } = this.props
     return (
       <React.Fragment>
       <CssBaseline />
       <div className="App">
         <Appbar/>
-        <header className="App-header">
-          <h1 className="App-title">HomeStock</h1>
-        </header>
+        <Card className="App-header">
+          <CardActionArea>
+            <CardMedia
+            src={Logo}
+            title="HomeStock Logo"
+          />
+      </CardActionArea>
+        </Card>
         {/* routes */}
         <div className="container">
             <Route exact path='/' render={() => <Login login={this.login}/>} />
@@ -68,5 +93,8 @@ class App extends Component {
     );
   }
 }
+App.propTypes = {
+  classes: PropTypes.object.isRequired,
+ }
 
 export default withRouter(App)

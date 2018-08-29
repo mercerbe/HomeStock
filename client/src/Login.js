@@ -111,7 +111,7 @@ class Login extends React.Component {
             <Typography variant='headline'>{this.state.createAccount ? 'Register for an account' : 'Login To Existing Account'}</Typography>
             <form action="" className={classes.form}>
               {this.state.createAccount ? <Typography variant='subheading'>Already have an account? <span className='fake-link' onClick={this.toggleLogin}>Click <strong>Here</strong> to Login</span></Typography> :
-                <h4>Don't have an account? <span onClick={this.toggleLogin} className='fake-link'>Click Here to create one.</span></h4>}
+                <Typography variant='subheading'>Don't have an account? <span onClick={this.toggleLogin} className='fake-link'>Click <strong>Here</strong> to create one</span></Typography>}
                   <br/>
               <FormControl margin="normal" required fullWidth>
                 <InputLabel className='form-group-label' htmlFor="email">Email</InputLabel>
@@ -142,53 +142,3 @@ Login.propTypes = {
   classes: PropTypes.object.isRequired,
  }
 export default withStyles(styles)(Login)
-
-
-//
-// function SignIn(props) {
-//   const { classes } = props;
-//
-//   return (
-//     <React.Fragment>
-//       <CssBaseline />
-//       <main className={classes.layout}>
-//         <Paper className={classes.paper}>
-//           <Avatar className={classes.avatar}>
-//             <LockIcon />
-//           </Avatar>
-//           <Typography variant="headline">Sign in</Typography>
-//           <form className={classes.form}>
-//             <FormControl margin="normal" required fullWidth>
-//               <InputLabel htmlFor="email">Email Address</InputLabel>
-//               <Input id="email" name="email" autoComplete="email" autoFocus />
-//             </FormControl>
-//             <FormControl margin="normal" required fullWidth>
-//               <InputLabel htmlFor="password">Password</InputLabel>
-//               <Input
-//                 name="password"
-//                 type="password"
-//                 id="password"
-//                 autoComplete="current-password"
-//               />
-//             </FormControl>
-//             <Button
-//               type="submit"
-//               fullWidth
-//               variant="raised"
-//               color="primary"
-//               className={classes.submit}
-//             >
-//               Sign in
-//             </Button>
-//           </form>
-//         </Paper>
-//       </main>
-//     </React.Fragment>
-//   );
-// }
-//
-// SignIn.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
-//
-// export default withStyles(styles)(SignIn);

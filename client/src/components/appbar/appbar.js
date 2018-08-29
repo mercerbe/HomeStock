@@ -71,9 +71,9 @@ class MenuAppBar extends React.Component {
             open={open}
             onClose={this.handleClose}
           >
-          <MenuItem onClick={this.handleClose}><Link to='/about'>About</Link></MenuItem>
-          <MenuItem onClick={this.handleClose}><Link to='/'>Login/Register</Link></MenuItem>
-          <MenuItem onClick={this.handleClose}><Link to='/dashboard'>Dashboard</Link></MenuItem>
+          <MenuItem onClick={this.handleClose}><Link to='/about' style={{textDecoration: 'none'}}>About</Link></MenuItem>
+          <MenuItem onClick={this.handleClose}><Link to='/' style={{textDecoration: 'none'}}>Login/Register</Link></MenuItem>
+          <MenuItem onClick={this.handleClose}><Link to='/dashboard' style={{textDecoration: 'none'}}>Dashboard</Link></MenuItem>
           <MenuItem onClick={this.handleClose}>Logout</MenuItem>
           </Menu>
           </div>
