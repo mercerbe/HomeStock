@@ -48,11 +48,7 @@ const styles = theme => ({
 
 
 class Login extends React.Component {
-  //define constructor
-  constructor(props) {
-    super(props)
-    //add here for class handling
-  }
+
   //set inital state for component
   state = {
     email: '',

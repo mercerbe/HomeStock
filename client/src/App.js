@@ -12,22 +12,12 @@ import Storage from './utils/Storage'
 import Service from './utils/Service'
 //Material Baseline
 import CssBaseline from '@material-ui/core/CssBaseline'
-import PropTypes from 'prop-types'
-import Card from '@material-ui/core/Card'
-import CardMedia from '@material-ui/core/CardMedia'
-import CardActionArea from '@material-ui/core/CardActionArea'
+import Image from 'material-ui-image'
 //images
-import Logo from './images/logo_transparent.png'
+import Logo from './images/logo2.png'
 
 //styles for App
-const styles = {
-  card: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
-}
+
 
 class App extends Component {
   // set initial state
@@ -67,20 +57,14 @@ class App extends Component {
   }
 
   render() {
-    const { classes } = this.props
     return (
       <React.Fragment>
       <CssBaseline />
-      <div className="App">
+      <div className="App" style={{backgroundColor: '#34495e', color: '#ffffff'}}>
         <Appbar/>
-        <Card className="App-header">
-          <CardActionArea>
-            <CardMedia
-            src={Logo}
-            title="HomeStock Logo"
-          />
-      </CardActionArea>
-        </Card>
+        <div style={{maxWidth: '400px', maxHeight: '400px', display:'block', marginLeft: 'auto', marginRight: 'auto', marginTop: '5px'}}>
+        <Image src={Logo} disableTransition= {true}/>
+        </div>
         {/* routes */}
         <div className="container">
             <Route exact path='/' render={() => <Login login={this.login}/>} />
@@ -90,11 +74,8 @@ class App extends Component {
         <Footer />
       </div>
       </React.Fragment>
-    );
+    )
   }
 }
-App.propTypes = {
-  classes: PropTypes.object.isRequired,
- }
 
 export default withRouter(App)
