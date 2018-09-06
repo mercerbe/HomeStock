@@ -1,6 +1,9 @@
 
 import React from 'react'
 import Service from './utils/Service'
+import Typography from '@material-ui/core/Typography'
+//custom components
+import ItemTable from './components/itemTable'
 
 class Dashboard extends React.Component {
 
@@ -31,9 +34,10 @@ class Dashboard extends React.Component {
     const { user: { email } } = this.state
     return (
       <div className="dashboard">
-        <div>Welcome to your dashboard!</div>
-        <div>Your profile information</div>
-        <div>Email Address: {email}</div>
+        <Typography>Welcome to your dashboard!</Typography>
+        <Typography>Your profile information</Typography>
+        <Typography>Email Address: {email}</Typography>
+        <ItemTable style={{margin: "1em"}}/>
       </div>
     )
   }
