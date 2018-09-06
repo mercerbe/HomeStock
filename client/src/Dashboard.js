@@ -4,6 +4,7 @@ import Service from './utils/Service'
 import Typography from '@material-ui/core/Typography'
 //custom components
 import ItemTable from './components/itemTable'
+import ItemForm from './components/itemForm'
 
 class Dashboard extends React.Component {
 
@@ -37,6 +38,7 @@ class Dashboard extends React.Component {
         <Typography>Welcome to your dashboard!</Typography>
         <Typography>Your profile information</Typography>
         <Typography>Email Address: {email}</Typography>
+        <ItemForm />
         <ItemTable style={{margin: "1em"}}/>
       </div>
     )
