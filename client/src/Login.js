@@ -61,7 +61,7 @@ class Login extends React.Component {
 
 
   //event handling for state
-  toggleLogin = () => this.setState({ createAccount: ! this.state.createAccount })
+  toggleLogin = () => this.setState({ createAccount: !this.state.createAccount })
   updatePassword = (e) => this.setState({ password: e.target.value })
   updateEmail = (e) => this.setState({ email: e.target.value })
   updatePasswordCheck = (e) => this.setState({ passwordCheck: e.target.value })
@@ -87,6 +87,7 @@ class Login extends React.Component {
         .then(({ data }) => {
           if (data.success) {
             this.setState({ createAccount: false, email: '', password: '', passwordCheck: '' })
+            console.log('new registration in DB')
           }
         })
         .catch(err => console.log('Failed registration'))
@@ -122,7 +123,7 @@ class Login extends React.Component {
                 <InputLabel className='form-group-label' htmlFor="passwordConfirm">Confirm Password</InputLabel>
                   <Input autoComplete='new-password' autoFocus type="password" name="passwordConfirm" value={this.state.passwordCheck} onChange={this.updatePasswordCheck}/>
               </FormControl> }
-              {passwordsDoNotMatch && <div>Your passwords don't match!</div>}
+              {passwordsDoNotMatch && <Typography variant='body1' style={{color: 'red' }}>Your passwords don't match!</Typography>}
               {!this.state.createAccount ? (
               <Button variant='contained' color='primary' onClick={this.handleLogin}>Login</Button> ) : (
               <Button variant='contained' color='primary' onClick={this.handleRegistration}>Register</Button> )

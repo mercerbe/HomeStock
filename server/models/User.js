@@ -34,13 +34,7 @@ const UserSchema = new Schema({
   password: {
     type: String,
     required: true
-  },
-  items: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Item'
-    }
-  ]
+  }
 });
 
 // setup custom method to not exposed even the hashed password
@@ -48,7 +42,7 @@ UserSchema.set('toJSON', {
   transform: function(doc, json) {
     return {
       id: json._id,
-      email: json.email,
+      email: json.email
     }
   }
 });

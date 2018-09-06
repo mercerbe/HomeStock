@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 import Storage from './Storage'
 
 function formattedToken() {
@@ -24,6 +24,6 @@ export default class Service {
         Authorization: formattedToken()
       }
     });
-    return req;
+    return req
   }
 }

@@ -7,5 +7,5 @@ const PORT = process.env.PORT || 3001
 
 //server listen
 http.createServer(app).listen(PORT, () => {
-  console.log('App listening on ' + PORT + '@' + (new Date()).toLocaleString())
+  console.log('App listening on ' + PORT + ' @ ' + (new Date()).toLocaleString())
 })

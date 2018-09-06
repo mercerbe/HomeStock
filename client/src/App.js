@@ -46,10 +46,9 @@ class App extends Component {
     if (data.success) {
       Storage.setToken(data.token)
       this.setState({ loggedIn: true })
-      this.props.history.push('/')
+      this.props.history.push('/dashboard')
     }
   }
-
   logout = () => {
     Storage.setToken('')
     this.setState({ loggedIn: false })
@@ -61,7 +60,7 @@ class App extends Component {
       <React.Fragment>
       <CssBaseline />
       <div className="App" style={{backgroundColor: '#34495e', color: '#ffffff'}}>
-        <Appbar/>
+        <Appbar logout={this.logout}/>
         <div style={{maxWidth: '400px', maxHeight: '400px', display:'block', marginLeft: 'auto', marginRight: 'auto', marginTop: '5px'}}>
         <Image src={Logo} disableTransition= {true}/>
         </div>
@@ -69,7 +68,7 @@ class App extends Component {
         <div className="container">
             <Route exact path='/' render={() => <Login login={this.login}/>} />
             <Route path='/about' render={() => <About loggedIn={this.state.loggedIn}/>} />
-            <Route path='/dashboard' render={() => <Dashboard history={this.props.history} loggedIn={this.state.loggedIn}/>}/>
+            <Route path='/dashboard' render={() => <Dashboard history={this.props.history} loggedIn={this.state.loggedIn} logout={this.logout} login={this.login}/>}/>
         </div>
         <Footer />
       </div>
