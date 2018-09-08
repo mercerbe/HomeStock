@@ -17,6 +17,7 @@ mongoose.connect(
 );
 //bring in routes
 const apiRoutes = require('./server/routes/api')
+const itemRoutes = require('./server/routes/items')
 
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')))
@@ -25,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 // Put all API endpoints under '/api'
 app.use('/api', apiRoutes)
+app.use('/item', itemRoutes)
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.

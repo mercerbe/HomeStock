@@ -71,28 +71,18 @@ class itemForm extends React.Component {
             <Avatar className={classes.avatar}>
               <LockIcon/>
             </Avatar>
-            <Typography variant='headline'>{this.state.createAccount ? 'Register for an account' : 'Login To Existing Account'}</Typography>
+            <Typography variant='headline'>Add an item</Typography>
             <form action="" className={classes.form}>
-              {this.state.createAccount ? <Typography variant='subheading'>Already have an account? <span className='fake-link' onClick={this.toggleLogin}>Click <strong>Here</strong> to Login</span></Typography> :
-                <Typography variant='subheading'>Don't have an account? <span onClick={this.toggleLogin} className='fake-link'>Click <strong>Here</strong> to create one</span></Typography>}
                   <br/>
               <FormControl margin="normal" required fullWidth>
-                <InputLabel className='form-group-label' htmlFor="email">Email</InputLabel>
+                <InputLabel className='form-group-label' htmlFor="email">Item</InputLabel>
                   <Input autoComplete='email' autoFocus type="text" name="email" value={this.state.email} onChange={this.updateEmail}/>
               </FormControl>
               <FormControl margin="normal" required fullWidth>
-                <InputLabel className='form-group-label' htmlFor="password">Password</InputLabel>
+                <InputLabel className='form-group-label' htmlFor="password">Amount</InputLabel>
                   <Input autoComplete='password' autoFocus type="password" name="password" value={this.state.password} onChange={this.updatePassword}/>
               </FormControl>
-              {this.state.createAccount &&
-                <FormControl margin="normal" required fullWidth>
-                <InputLabel className='form-group-label' htmlFor="passwordConfirm">Confirm Password</InputLabel>
-                  <Input autoComplete='new-password' autoFocus type="password" name="passwordConfirm" value={this.state.passwordCheck} onChange={this.updatePasswordCheck}/>
-              </FormControl> }
-              {!this.state.createAccount ? (
-              <Button variant='contained' color='primary' onClick={this.handleLogin}>Login</Button> ) : (
-              <Button variant='contained' color='primary' onClick={this.handleRegistration}>Register</Button> )
-              }
+              <Button variant='contained' color='primary' onClick=''>Add Item</Button>
           </form>
         </Paper>
       </main>

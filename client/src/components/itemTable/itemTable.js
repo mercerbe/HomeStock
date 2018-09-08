@@ -10,14 +10,25 @@ import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
   root: {
-    width: '100%',
+    width: 'auto',
+    display: 'block',
     marginTop: theme.spacing.unit * 3,
     overflowX: 'auto',
   },
   table: {
     minWidth: 700,
+    maxWidth: 900,
+    marginLeft: 'auto',
+    marginRight: 'auto'
   },
-});
+  paper: {
+    marginTop: theme.spacing.unit * 8,
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 3}px ${theme.spacing.unit * 3}px`,
+  },
+})
 
 let id = 0;
 function createData(name, calories, fat, carbs, protein) {
@@ -35,7 +46,7 @@ function SimpleTable(props) {
   const { classes } = props;
 
   return (
-    <Paper className={classes.root}>
+    <Paper className={classes.paper}>
       <Table className={classes.table}>
         <TableHead>
           <TableRow>

@@ -6,6 +6,10 @@ import Typography from '@material-ui/core/Typography'
 import ItemTable from './components/itemTable'
 import ItemForm from './components/itemForm'
 
+const profileStyle = {
+  color: 'white'
+}
+
 class Dashboard extends React.Component {
 
   state={
@@ -35,9 +39,9 @@ class Dashboard extends React.Component {
     const { user: { email } } = this.state
     return (
       <div className="dashboard">
-        <Typography>Welcome to your dashboard!</Typography>
-        <Typography>Your profile information</Typography>
-        <Typography>Email Address: {email}</Typography>
+        <Typography style={profileStyle}>Welcome to your dashboard!</Typography>
+        <Typography style={profileStyle}>Your profile information</Typography>
+        <Typography style={profileStyle}>Email Address: {email}</Typography>
         <ItemForm />
         <ItemTable style={{margin: "1em"}}/>
       </div>

@@ -1,5 +1,11 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
+const moment = require('moment')
+
+const today = () => {
+  let date = moment()
+  return date
+}
 
 const Schema = mongoose.Schema
 
@@ -21,4 +27,5 @@ const ItemSchema = new Schema({
   }
 })
 
-module.exports = mongoose.model('Item', ItemSchema)
+let Item = mongoose.model('Item', itemSchema)
+moule.exports = Item
